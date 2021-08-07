@@ -11,3 +11,8 @@ POWERSHELL:
 $env:FLASK_APP = "flaskr"
 $env:FLASK_ENV = "development"
 flask run 
+
+database: 
+$env:FLASK_APP = "flaskr"
+$env:FLASK_ENV = "development"
+flask init-db
