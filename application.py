@@ -61,7 +61,7 @@ def login():
         # Ensure username exists and password is correct
         if len(rows) != 1 or not (rows[0]["password"] == request.form.get("log-password")):
             flash("Invalid username and/or password")
-            return redirect("/register")
+            return redirect("/login")
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
         # Redirect user to home page
@@ -129,7 +129,6 @@ def home():
         latestDeed = LatestDeed[0]["latestDeed"]
         growth = Growth[0]["growthLevel"]
 
-        img = "static/0.png"
         if growth == 0:
             img = "static/0.png"
         elif growth == 1:
@@ -143,6 +142,8 @@ def home():
         elif growth == 5:
             img = "static/5.png"
         elif growth == 6:
+            img = "static/6.png"
+        if growth > 6:
             img = "static/6.png"
 
         fact = getFact()
