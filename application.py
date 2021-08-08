@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
 import datetime
 
-from helpers import apology, login_required, lookup, usd
+from helpers import login_required, getFact
 
 # Configure application
 app = Flask(__name__)
@@ -25,8 +25,6 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-# Custom filter
-app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
@@ -130,7 +128,25 @@ def home():
         LatestDeed = db.execute("SELECT latestDeed FROM users WHERE id = :user_id", user_id=session["user_id"])
         latestDeed = LatestDeed[0]["latestDeed"]
         growth = Growth[0]["growthLevel"]
-        return render_template("home.html", latestDeed=latestDeed)
+
+        img = "static/0.png"
+        if growth == 0:
+            img = "static/0.png"
+        elif growth == 1:
+            img = "static/1.png"
+        elif growth == 2:
+            img = "static/2.png"
+        elif growth == 3:
+            img = "static/3.png"
+        elif growth == 4:
+            img = "static/4.png"
+        elif growth == 5:
+            img = "static/5.png"
+        elif growth == 6:
+            img = "static/6.png"
+
+        fact = getFact()
+        return render_template("home.html", flowerImage=img, latestDeed=latestDeed, fact=fact)
 
 
 def errorhandler(e):
