@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Log In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+
+    <style>
+      body{
+        background-color: #EDFBF1;
+        font-family: work sans
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: white;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: #555B6E;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active, .ref) {
+        background-color: rgba(190, 227, 219, 0.4);
+      }
+
+      .active {
+        background-color: rgba(190, 227, 219, 0.7)
+      }
+
+      .main{
+        background-image: url("static/succulentyay.jpg");
+      }
+
+      h1{
+        font-family: 'Glass Antiqua', cursive;
+        font-size: 100px;
+        color: #117627;
+        margin-bottom: 0;
+        padding: 20px
+      }
+
+
+      .here{
+        margin-left: 10vw;
+        max-width: 40vw
+      }
+
+      p{
+        color: #555B6E;
+        font-weight: bold;
+        font-size: 35px
+      }
+
+      .button {
+      font-family: 'Glass Antiqua', cursive;
+      border-radius: 12px;
+      border: 5px solid white;
+      padding: 2vh;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 5vh;
+      cursor: pointer;
+      color: black;
+      overflow: hidden;
+      margin-right: 2vw
+    }
+
+    .button:hover{
+    border: none;
+    background-color: rgba(190, 227, 219);
+    border: 5px solid rgba(190, 227, 219);
+    }
+
+    footer{
+    background-color: white;
+    padding: 14px;
+    text-align: center
+    }
+
+    .mini{
+      font-size: 16px;
+    }
+
+.log-in {
+    background: #EAE8E7;
+    display: block;
+    border-radius: 40px;
+    width: 40vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-top: 10vh;
+    margin-bottom: 18vh
+}
+
+.title {
+    padding-top: 30px;
+}
+
+#log-username {
+    display: block;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 11px 30px;
+    width: 300px;
+    background: none;
+    margin: 20px auto;
+    transition: 0.25s;
+    color: black;
+}
+
+#log-password {
+    display: block;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 11px 30px;
+    width: 300px;
+    background: none;
+    margin: 20px auto;
+    transition: 0.25s;
+    color: black;
+    font-size: 15px
+}
+
+#submit {
+    font-size: large;
+    font-family: 'Glass Antiqua', cursive;
+    background: rgb(17, 255, 96);
+    color: black;
+    padding: 11px 20px;
+    margin-bottom: 30px;
+    width: 250px;
+    border-radius: 20px;
+    transition: 0.25s;
+    background-color: rgba(190, 227, 219);
+    border: none
+}
+
+#log-username:hover, #log-password:hover {
+    width: 200px;
+}
+
+#submit:hover {
+    cursor: pointer;
+   background-color: white
+}
+
+
+    </style>
+  </head>
+  <body>
+
+    <ul>
+  <li><a href="/">Home</a></li>
+  <li><a class="active" href="/login">Log In</a></li>
+  <li><a href="/register">Sign Up</a></li>
+  <li style = "float: right"> <a class = "ref" href = "/">Petal</a> </li>
+</ul>
+<div style = "text-align: center">
+<section class="loginpage">
+        <form action="/login" class="log-in" method="post">
+            <h1 class="title">Login</h1>
+
+            <label for="log-username"></label>
+            <input type="text" placeholder="Username" maxlensgth="20" id="log-username" name="log-username">
+            <label for="log-password"></label>
+            <input type="password" placeholder="Password" maxlength="50" id="log-password" name="log-password">
+<br/>
+            <input type="submit" id="submit" action="#">
+        </form>
+    </section>
+
+
+<footer>
+<p class = 'mini'>PETALS</p>
+<p class = 'mini' style = "font-weight: normal">Copyright © 2021</p>
+</footer>
+
+</div>
+  </body>
+  </html>

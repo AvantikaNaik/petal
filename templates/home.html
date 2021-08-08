@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+
+    <style>
+      body{
+        background-color: #EDFBF1;
+        font-family: work sans
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: white;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: #555B6E;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active, .ref) {
+        background-color: rgba(190, 227, 219, 0.4);
+      }
+
+      .active {
+        background-color: rgba(190, 227, 219, 0.7)
+      }
+
+      .main{
+        background-image: url("graphics/succulentyay.jpg");
+      }
+
+      h1{
+        font-family: 'Glass Antiqua', cursive;
+        letter-spacing: 0.4vw;
+        font-size: 50px;
+        color: black;
+        margin-top: 0;
+        margin-bottom: 0
+      }
+
+      h2{
+        font-family: 'Glass Antiqua', cursive;
+        font-size: 70px;
+        margin-bottom: 5px
+
+      }
+
+      .here{
+        margin-left: 10vw;
+        max-width: 40vw
+      }
+
+      p{
+        color: #555B6E;
+        font-weight: bold;
+        font-size: 20px
+      }
+
+      .button {
+      font-family: 'Glass Antiqua', cursive;
+      border-radius: 12px;
+      border: 5px solid white;
+      padding: 2vh;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 5vh;
+      cursor: pointer;
+      color: black;
+      overflow: hidden;
+      margin-right: 2vw
+    }
+
+    .button:hover{
+    border: none;
+    background-color: rgba(190, 227, 219);
+    border: 5px solid rgba(190, 227, 219);
+    }
+
+    footer{
+    background-color: white;
+    padding: 14px;
+    text-align: center
+    }
+
+#principal{
+      background-color: rgba(234, 232, 231, 1);
+      max-height: 85vh
+    }
+
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  margin: 1vw;
+}
+
+.half {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chunk{
+  flex: 1;   padding: 0.5vw;
+}
+
+.chunk2{
+  flex: 2;   padding: 0.5vw;
+}
+
+.filler{
+  flex: 1
+}
+
+.put{
+	width: 20vw;
+	border:1px solid black;
+	background-color: white
+}
+
+
+#plant{
+  position: absolute;
+width: 20vw;
+height: 70vh;
+
+background: #EDFBF1;
+border: 10px solid #203225;
+box-sizing: border-box;
+border-radius: 200px 200px 0px 0px;
+}
+
+.title{
+  background-color: white;
+  display: block;
+  padding: 2vh
+}
+
+.info{
+  background-color: #F0F0F0;
+  color: background: #555B6E;
+  padding: 2vh;
+  display: block;
+}
+
+ .mini{
+      font-size: 16px;
+    }
+
+form{
+  text-align: center
+}
+
+#submit {
+    font-size: large;
+    font-family: 'Glass Antiqua', cursive;
+    background: rgb(17, 255, 96);
+    color: black;
+    padding: 11px 20px;
+    margin-bottom: 30px;
+    width: 250px;
+    border-radius: 20px;
+    transition: 0.25s;
+    background-color: rgba(190, 227, 219);
+    border: none
+}
+
+#submit:hover {
+    cursor: pointer;
+   background-color: white
+}
+    </style>
+  </head>
+  <body>
+
+    <ul>
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/logout">Logout</a></li>
+
+  <li style = "float: right"> <a class = "ref" href = "/">Petal</a> </li>
+</ul>
+
+<div id = "principal"><br/>
+<section class="container" style = "height: 80vh">
+  <div class="half, chunk">
+    <div id = "plant">
+      <img src = "" alt = "myplant" style = "width: 15vw; margin-left: 2.5vw; margin-right: 2.5vw; margin-top: 20vh ">
+    </div>
+  </div>
+
+  <div class="half, chunk2" style = "margin-left: 3vw">
+      <div class = "title">
+        <h1>Latest Deed</h1>
+      </div>
+
+      <div class = "info" style = "min-height: 15vh">
+        <p id = "latest">Your latest deed is that you {{latestDeed}} {{growth}}</p>
+      </div>
+<br/>
+      <div class = "title">
+        <h1>Fun Fact</h1>
+      </div>
+
+      <div class = "info" style = "min-height: 23vh">
+        <p id = "fact">The world's oldest trees are 4,600 year old Bristlecone pines in the USA.</p>
+      </div>
+
+  </div>
+  <div class="half, chunk2">
+      <div class = "title">
+        <h1 style = "text-align: center">Add new activity</h1>
+      </div>
+
+      <div class = "info">
+        <form id = "deed" method="post">
+        <p style = "text-align: center">I helped my environment!</p>
+    <label for="walk"><input type="radio" name="good" id="walk" value="walked or biked"/> walked or biked</label> <br />
+    <label for="trash"><input type="radio" name="good" id="trash" value="picked up trash"/> picked up trash</label> <br />
+    <label for="recycled"><input type="radio" name="good" id="recycled" value="recycled"/> recycled</label> <br />
+    <label for="tree"><input type="radio" name="good" id="tree" value="planted a tree"/> planted a tree </label> <br />
+    <label for="reuse"><input type="radio" name="good" id="reuse" value="used a reusable bag or bottle"/> used a reusable bag or bottle </label> <br />
+    <label for="donate"><input type="radio" name="good" id="donate" value="donated to an environmental organization"/> donated to an environmental organization </label> <br />
+      <br/><p style = "text-align: center">I damaged my environment!</p>
+      <label for="litter"><input type="radio" name="bad" id="litter" value="littered"/> littered</label> <br />
+    <label for="lights"><input type="radio" name="bad" id="lights" value="left the lights on"/> left the lights on</label> <br />
+    <label for="water"><input type="radio" name="bad" id="water" value="left the water running"/> left the water running</label> <br />
+    <label for="straw"><input type="radio" name="bad" id="straw" value="used a plastic straw"/> used a plastic straw </label> <br />
+      <br/>
+       <input type="submit" id="submit" action="#">
+      </form>
+      </div>
+  </div></section>
+
+  <footer>
+<p class = 'mini'>PETALS</p>
+<p class = 'mini' style = "font-weight: normal">Copyright © 2021</p>
+</footer>
+  </body>
+  </html>
